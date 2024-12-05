@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:30:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/05 18:31:55 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/12/05 18:29:31 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/12/05 18:29:48 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minirt.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	(void)argv;
-	return (0);
-}
+# include "include.h"
+# include "macro.h"
+
+#endif
