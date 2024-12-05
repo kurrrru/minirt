@@ -6,12 +6,11 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:15:56 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/05 18:27:11 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:33:03 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/wrap.h"
-
 
 void	*xmlx_new_window(void *mlx_ptr, int width, int height, char *title)
 {
