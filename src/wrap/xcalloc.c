@@ -12,7 +12,7 @@
 
 #include "../../include/wrap.h"
 
-// if calloc fails, print error message and exit
+// if calloc fails, print error message and exit.
 void	*xcalloc(size_t count, size_t size)
 {
 	void	*ptr;
