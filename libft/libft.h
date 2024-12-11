@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdint.h>
+# include "get_next_line.h"
 
 // libc functions
 int					ft_atoi(const char *str);
