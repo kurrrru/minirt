@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util.h                                             :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 21:20:53 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 17:45:19 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/12 21:31:18 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/13 17:44:55 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTIL_H
-# define UTIL_H
+#include "../../include/util.h"
 
-# include "include.h"
-# include "macro.h"
-# include "struct.h"
-
-double	ft_atof(const char *str);
-bool	convertible_to_float(const char *str);
-int		msg_exit(char *msg);
-
-#endif
+int	msg_exit(char *msg)
+{
+	printf("Error\n");
+	printf("%s\n", msg);
+	exit(EXIT_FAILURE);
+}

@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   macro.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:03:42 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/05 18:03:54 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:48:43 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACRO_H
 # define MACRO_H
 
+# define SUCCESS 0
+# define FAILURE 1
 #endif
