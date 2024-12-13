@@ -27,12 +27,12 @@ LIBFT_NAME	=	libft.a
 LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 
 # Minilibx
-MLX_NAME	=	libmlx.a
+MLX_NAME	=	libmlx_Linux.a
 MLX			=	$(MLX_DIR)/$(MLX_NAME)
 
 # Compilation flags
 DEBUG		=	-fsanitize=address
-CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I.
+CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%%
 
 # Remove command
 RM			=	rm -f

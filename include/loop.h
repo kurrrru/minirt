@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   loop.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:29:09 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 20:10:28 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/13 17:24:11 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/13 17:26:47 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#ifndef LOOP_H
+# define LOOP_H
 
 # include "include.h"
-# include "loop.h"
 # include "macro.h"
 # include "struct.h"
-# include "util.h"
+
+int					key_press(int keycode, t_data *data);
+int					main_loop(t_data *data);
+int					init_data(t_data *data);
+int					close_window(void *param);
 
 #endif
