@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:29:09 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/05 18:30:01 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:43:56 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include "include.h"
 # include "macro.h"
 # include "struct.h"
+# include "util.h"
 
 #endif
