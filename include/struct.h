@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:29:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 17:25:54 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/13 20:25:33 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef enum e_shape
 	PLANE,
 	SPHERE,
 	CYLINDER
-} e_shape;
+}					e_shape;
 
 typedef struct s_color
 {

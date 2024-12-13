@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   include.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/13 20:25:20 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/13 20:25:24 by marimiyahar      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef INCLUDE_H
 # define INCLUDE_H
@@ -20,11 +30,5 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
-# include <math.h>
-# include <limits.h>
-# include <stdbool.h>
-
-# include "../libft/libft.h"
 
 #endif
