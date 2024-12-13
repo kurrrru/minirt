@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   include.h                                          :+:      :+:    :+:   */
+/*   loop.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 20:25:20 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/13 20:25:24 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/13 17:24:11 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/13 17:26:47 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDE_H
-# define INCLUDE_H
+#ifndef LOOP_H
+# define LOOP_H
 
-# ifdef __APPLE__
-#  include "../minilibx_opengl/mlx.h"
-#  include <OpenGL/gl.h>
-#  include <OpenGL/glu.h>
-# else
-#  include "../minilibx-linux/mlx.h"
-#  include "../minilibx-linux/mlx_int.h"
-# endif
+# include "include.h"
+# include "macro.h"
+# include "struct.h"
 
-# include "../libft/libft.h"
-# include <fcntl.h>
-# include <limits.h>
-# include <math.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+int					key_press(int keycode, t_data *data);
+int					main_loop(t_data *data);
+int					init_data(t_data *data);
+int					close_window(void *param);
 
 #endif
