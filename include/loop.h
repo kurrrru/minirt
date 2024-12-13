@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   macro.h                                            :+:      :+:    :+:   */
+/*   loop.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:03:42 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 17:25:09 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/13 17:24:11 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/13 17:26:47 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MACRO_H
-# define MACRO_H
+#ifndef LOOP_H
+# define LOOP_H
 
-# define ESC_KEY 53
-# define CLOSE_EVENT 17
-# define SCREEN_WID 800
-# define SCREEN_HEI 600
+# include "include.h"
+# include "macro.h"
+# include "struct.h"
+
+int					key_press(int keycode, t_data *data);
+int					main_loop(t_data *data);
+int					init_data(t_data *data);
+int					close_window(void *param);
 
 #endif

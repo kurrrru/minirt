@@ -16,14 +16,14 @@ LIBFT_NAME	=	libft.a
 LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 
 # Minilibx
-MLX_DIR		=	minilibx-linux
+MLX_DIR		=	minilibx_opengl
 MLX_NAME	=	libmlx_Linux.a
 MLX			=	$(MLX_DIR)/$(MLX_NAME)
 
 # Compilation flags
 DEBUG		=	-fsanitize=address
-LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -lXext -lX11 -lm -lbsd
-CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%%
+LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -framework OpenGL -framework AppKit
+CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I.
 
 # Remove command
 RM			=	rm -f
