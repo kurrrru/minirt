@@ -40,7 +40,7 @@ fclean: clean
 
 re: fclean all
 
-all: $(NAME)
+all: $(NAME) bonus
 
 bonus: $(BONUS_NAME)
 

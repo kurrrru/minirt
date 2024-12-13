@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:30:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 20:24:43 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/13 23:59:18 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 		msg_exit("Argument must end with .rt");
 	if (init_data(&data) != EXIT_SUCCESS)
 		exit(EXIT_FAILURE);
+	read_file(&data, argv);
 	mlx_key_hook(data.win, key_press, &data);
 	mlx_hook(data.win, CLOSE_EVENT, 0, close_window, &data);
 	mlx_loop_hook(data.mlx, &main_loop, &data);
