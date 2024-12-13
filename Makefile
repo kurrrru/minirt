@@ -1,3 +1,14 @@
+# Detect OS
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S), Darwin)
+    MLX_DIR = minilibx_opengl
+    LFLAGS  = -Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -framework OpenGL -framework AppKit
+else
+    MLX_DIR = minilibx-linux
+    LFLAGS  = -Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -lXext -lX11 -lm -lbsd
+endif
+
 # Executable file
 NAME		=	minirt
 
@@ -16,13 +27,11 @@ LIBFT_NAME	=	libft.a
 LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 
 # Minilibx
-MLX_DIR		=	minilibx_opengl
 MLX_NAME	=	libmlx.a
 MLX			=	$(MLX_DIR)/$(MLX_NAME)
 
 # Compilation flags
 DEBUG		=	-fsanitize=address
-LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -framework OpenGL -framework AppKit
 CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I.
 
 # Remove command
