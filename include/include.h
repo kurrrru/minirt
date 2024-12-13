@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:02:37 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 17:55:47 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/13 18:02:27 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 # ifdef __APPLE__
 #  include "../minilibx_opengl/mlx.h"
-# include <OpenGL/gl.h>
-# include <OpenGL/glu.h>
+#  include <OpenGL/gl.h>
+#  include <OpenGL/glu.h>
 # else
 #  include "../minilibx-linux/mlx.h"
-#  include <X11/X.h>
-#  include <X11/Xlib.h>
+#  include "../minilibx-linux/mlx_int.h"
 # endif
 
 # include "../libft/libft.h"
