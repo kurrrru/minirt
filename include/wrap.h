@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wrap.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:04:46 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/05 18:25:25 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:50:03 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ void	*xmlx_new_image(void *mlx_ptr, int width, int height);
 
 int		xopen(const char *pathname, int flags);
 void	xclose(int fd);
+
+t_list	*xlstnew(void *content);
+char	**xsplit(char const *s, char c);
 
 #endif

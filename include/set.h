@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   loop.h                                             :+:      :+:    :+:   */
+/*   set.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 17:24:11 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 14:10:51 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/14 14:14:00 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOOP_H
-# define LOOP_H
+#ifndef SET_H
+# define SET_H
 
 # include "include.h"
 # include "macro.h"
 # include "struct.h"
+# include "wrap.h"
 # include "util.h"
 
-int		key_press(int keycode, t_data *data);
-int		main_loop(t_data *data);
-void	init_data(t_data *data);
-int		close_window(void *param);
+int		read_file(t_data *data, char **argv);
+
+// utilities
+t_vec	parse_vec(char *str);
+t_color	parse_color(char *str);
+
+// set elements
+int		set_ambient(t_data *data, char **params);
+int		set_camera(t_data *data, char **params);
+int		set_light(t_data *data, char **params);
+
+// set objects
+int		set_cylinder(t_data *data, char **params);
+int		set_plane(t_data *data, char **params);
+int		set_sphere(t_data *data, char **params);
 
 #endif

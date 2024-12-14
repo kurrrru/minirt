@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:03:42 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 20:09:23 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:28:12 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@
 
 # define SUCCESS 0
 # define FAILURE 1
+
 #endif

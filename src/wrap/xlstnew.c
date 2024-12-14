@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   xlstnew.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 21:31:18 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 00:01:06 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/14 18:46:33 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/14 18:51:08 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/util.h"
+#include "../../include/wrap.h"
 
-int	msg_exit(char *msg)
+t_list	*xlstnew(void *content)
 {
-	printf("Error\n");
-	printf("%s\n", msg);
-	exit(EXIT_FAILURE);
-}
+	t_list	*ret;
 
-void	free_ptrarr(void **arr)
-{
-	size_t	i;
-
-	i = 0;
-	if (!arr)
-		return ;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
+	ret = ft_lstnew(content);
+	if (!ret)
+	{
+		perror("lstnew");
+		exit(EXIT_FAILURE);
+	}
+	return (ret);
 }

@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 21:31:18 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 00:01:06 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/14 14:20:15 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/14 14:21:07 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/util.h"
+#include "libft.h"
 
-int	msg_exit(char *msg)
-{
-	printf("Error\n");
-	printf("%s\n", msg);
-	exit(EXIT_FAILURE);
-}
-
-void	free_ptrarr(void **arr)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
 	i = 0;
-	if (!arr)
-		return ;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

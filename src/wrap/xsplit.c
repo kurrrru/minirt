@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   xsplit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:19:45 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/05 18:27:11 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:39:18 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

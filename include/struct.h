@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:29:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 20:25:33 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 00:00:26 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef enum e_shape
 	PLANE,
 	SPHERE,
 	CYLINDER
-}					e_shape;
+}					t_shape;
 
 typedef struct s_color
 {
@@ -57,8 +57,18 @@ typedef struct s_obejct
 	t_color			color;
 }					t_object;
 
+typedef struct s_light
+{
+	t_vec			position;
+	t_color			color;
+	double			intensity;
+}					t_light;
+
 typedef struct s_camera
 {
+	t_vec			position;
+	t_vec			orientation;
+	double			fov;
 }					t_camera;
 
 typedef struct s_data
@@ -69,6 +79,7 @@ typedef struct s_data
 	t_camera		camera;
 	t_list			*objects;
 	t_color			ambient;
+	t_light			light;
 }					t_data;
 
 #endif

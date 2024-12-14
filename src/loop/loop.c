@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:16:13 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/13 17:38:07 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:10:29 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,10 @@ int	main_loop(t_data *data)
 	return (0);
 }
 
-int	init_data(t_data *data)
+void	init_data(t_data *data)
 {
-	data->mlx = mlx_init();
+	data->ambient = (t_color){-1, -1, -1};
+	data->camera.fov = -1.0;
+	data->light.intensity = -1.0;
 	data->objects = NULL;
-	if (!data->mlx)
-		return (printf("Error\n Failed to initialize mlx\n"), EXIT_FAILURE);
-	data->win = mlx_new_window(data->mlx, 1000, 1000, "miniRT");
-	if (!data->win)
-		return (printf("Error\nFailed to create window\n"), EXIT_FAILURE);
-	return (EXIT_SUCCESS);
 }
