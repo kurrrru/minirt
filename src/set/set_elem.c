@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:49:35 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/13 23:58:58 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 18:37:17 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	set_camera(t_data *data, char **params)
 	position = parse_vec(params[0]);
 	orientation = parse_vec(params[1]);
 	fov = ft_atof(params[2]);
-	if (position.x == -1 || orientation.x == -1 || fov < 0 || fov > 180)
+	if (fov < 0 || fov > 180)
 		return (-1);
 	data->camera = (t_camera){position, orientation, fov};
 	return (0);

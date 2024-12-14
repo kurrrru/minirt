@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 21:15:51 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/11 21:42:13 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:51:50 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ double	ft_atof(const char *str)
 	double	divisor;
 	int		sign;
 
+	if (!convertible_to_float(str))
+		msg_exit("Invalid character in file");
 	while (ft_isspace(*str))
 		str++;
 	sign = 1;
@@ -61,5 +63,5 @@ static int	ft_isspace(int c)
 // 	printf("%f\n", ft_atof("0.456"));
 // 	printf("%f\n", atof("0.456"));
 // 	printf("%f\n", ft_atof("-0.000456"));
-// 	printf("%f\n", atof("-0.000456"));	
+// 	printf("%f\n", atof("-0.000456"));
 // }

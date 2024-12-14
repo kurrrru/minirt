@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   xsplit.c                                           :+:      :+:    :+:   */
+/*   xlstnew.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:19:45 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/14 18:39:18 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/14 18:46:33 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/14 18:51:08 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/wrap.h"
 
-// if split fails, print error message and exit
-char	**xsplit(char const *s, char c)
+t_list	*xlstnew(void *content)
 {
-	char	**split;
+	t_list	*ret;
 
-	split = ft_split(s, c);
-	if (split == NULL)
+	ret = ft_lstnew(content);
+	if (!ret)
 	{
-		perror("split");
+		perror("lstnew");
 		exit(EXIT_FAILURE);
 	}
-	return (split);
+	return (ret);
 }

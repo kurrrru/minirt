@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:24:56 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 14:23:04 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 18:38:59 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	read_file(t_data *data, char **argv)
 	char	*next_line;
 
 	fd = xopen(argv[1], O_RDONLY);
-	if (fd == -1)
-		msg_exit("failed to open file\n");
 	next_line = get_next_line(fd);
 	while (next_line)
 	{
@@ -35,7 +33,7 @@ int	read_file(t_data *data, char **argv)
 		free(next_line);
 		next_line = get_next_line(fd);
 	}
-	close(fd);
+	xclose(fd);
 	return (0);
 }
 
@@ -60,13 +58,11 @@ static int	handle_elements(t_data *data, char *next_line, int fd)
 {
 	char	**elements;
 
-	elements = ft_split(next_line, ' ');
-	if (!elements)
-		return (0);
+	elements = xsplit(next_line, ' ');
 	if (process_element(data, elements) == -1)
 	{
 		free_ptrarr((void **)elements);
-		close(fd);
+		xclose(fd);
 		msg_exit("Invalid or error processing element in file");
 	}
 	free_ptrarr((void **)elements);
