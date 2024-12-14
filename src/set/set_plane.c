@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:53:56 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/13 23:29:30 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:13:19 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	set_plane(t_data *data, char **params)
 	if (position.x == -1 || normal.x == -1 || color.red < 0 || color.green < 0
 		|| color.blue < 0)
 		return (-1);
-	plane = malloc(sizeof(t_object));
+	plane = xmalloc(sizeof(t_object));
 	if (!plane)
 		return (-1);
 	*plane = (t_object){PLANE, position, normal, 0, 0, color};

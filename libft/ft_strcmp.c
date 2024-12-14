@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   macro.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:03:42 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/14 14:28:12 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/14 14:20:15 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/14 14:21:07 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MACRO_H
-# define MACRO_H
+#include "libft.h"
 
-# define ESC_KEY 53
-# define CLOSE_EVENT 17
-# define SCREEN_WID 800
-# define SCREEN_HEI 600
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
 
-# define SUCCESS 0
-# define FAILURE 1
-
-#endif
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}

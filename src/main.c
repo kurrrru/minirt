@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:30:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/13 23:59:18 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:22:35 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@ int	main(int argc, char **argv)
 		msg_exit("Invalid number of argument");
 	if (is_valid_extension(argv))
 		msg_exit("Argument must end with .rt");
-	if (init_data(&data) != EXIT_SUCCESS)
-		exit(EXIT_FAILURE);
+	init_data(&data);
 	read_file(&data, argv);
+	data.mlx = xmlx_init();
+	if (!data.mlx)
+		msg_exit("Failed to initialize mlx\n");
+	data.win = xmlx_new_window(data.mlx, 1000, 1000, "miniRT");
+	if (!data.win)
+		msg_exit("Failed to create window\n");
 	mlx_key_hook(data.win, key_press, &data);
 	mlx_hook(data.win, CLOSE_EVENT, 0, close_window, &data);
 	mlx_loop_hook(data.mlx, &main_loop, &data);

@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:54:02 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/13 23:34:16 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:13:20 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	set_sphere(t_data *data, char **params)
 	if (position.x == -1 || diameter <= 0 || color.red < 0 || color.green < 0
 		|| color.blue < 0)
 		return (-1);
-	sphere = malloc(sizeof(t_object));
+	sphere = xmalloc(sizeof(t_object));
 	if (!sphere)
 		return (-1);
 	*sphere = (t_object){SPHERE, position, {0, 0, 0}, diameter / 2, 0, color};

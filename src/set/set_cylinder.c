@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:53:49 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 00:02:25 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:12:48 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	set_cylinder(t_data *data, char **params)
 	if (parse_cylinder_values(&position, &orientation, values, params) == -1
 		|| validate_cylinder_color(&color, params) == -1)
 		return (-1);
-	cylinder = malloc(sizeof(t_object));
+	cylinder = xmalloc(sizeof(t_object));
 	if (!cylinder)
 		return (-1);
 	*cylinder = (t_object){CYLINDER, position, orientation, values[0] / 2,

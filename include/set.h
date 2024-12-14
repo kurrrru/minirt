@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/13 23:33:50 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 14:14:00 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "include.h"
 # include "macro.h"
 # include "struct.h"
+# include "wrap.h"
 # include "util.h"
 
 int		read_file(t_data *data, char **argv);
