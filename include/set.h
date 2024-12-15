@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 14:14:00 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 22:10:51 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		read_file(t_data *data, char **argv);
 // utilities
 t_vec	parse_vec(char *str);
 t_color	parse_color(char *str);
+int		array_len(char **array);
 
 // set elements
 int		set_ambient(t_data *data, char **params);

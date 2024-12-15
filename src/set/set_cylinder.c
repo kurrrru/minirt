@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_cylinder.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:53:49 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 18:48:28 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/15 10:14:27 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	set_cylinder(t_data *data, char **params)
 	t_object	*cylinder;
 	double		values[2];
 
+	if (array_len(params) != 5)
+		return (-1);
 	if (parse_cylinder_values(&position, &orientation, values, params) == -1
 		|| validate_cylinder_color(&color, params) == -1)
 		return (-1);
@@ -41,8 +43,6 @@ static int	parse_cylinder_values(t_vec *position, t_vec *orientation,
 	*orientation = parse_vec(params[1]);
 	values[0] = ft_atof(params[2]);
 	values[1] = ft_atof(params[3]);
-	if (params[4] == NULL || params[5])
-		return (-1);
 	if (values[0] <= 0 || values[1] <= 0)
 		return (-1);
 	return (0);
