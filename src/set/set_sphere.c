@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_sphere.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:54:02 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 18:48:48 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 22:11:41 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	set_sphere(t_data *data, char **params)
 	t_color		color;
 	t_object	*sphere;
 
-	if (!params[0] || !params[1] || !params[2] || params[3])
+	if (array_len(params) != 3)
 		return (-1);
 	position = parse_vec(params[0]);
 	diameter = ft_atof(params[1]);

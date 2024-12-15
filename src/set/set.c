@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:24:56 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 22:03:28 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/15 10:16:22 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	read_file(t_data *data, char **argv)
 	next_line = get_next_line(fd);
 	while (next_line)
 	{
+		if (next_line[ft_strlen(next_line) - 1] == '\n')
+			next_line[ft_strlen(next_line) - 1] = '\0';
 		handle_elements(data, next_line, fd);
 		free(next_line);
 		next_line = get_next_line(fd);
@@ -34,11 +36,11 @@ int	read_file(t_data *data, char **argv)
 
 static int	process_element(t_data *data, char **elements)
 {
-	if (ft_strlen(elements[0]) == 1 && elements[0][0] == 'A')
+	if (ft_strcmp(elements[0], "A") == 0)
 		return (set_ambient(data, elements + 1));
-	else if (ft_strlen(elements[0]) == 1 && elements[0][0] == 'C')
+	else if (ft_strcmp(elements[0], "C") == 0)
 		return (set_camera(data, elements + 1));
-	else if (ft_strlen(elements[0]) == 1 && elements[0][0] == 'L')
+	else if (ft_strcmp(elements[0], "L") == 0)
 		return (set_light(data, elements + 1));
 	else if (ft_strcmp(elements[0], "pl") == 0)
 		return (set_plane(data, elements + 1));

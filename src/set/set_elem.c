@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_elem.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:49:35 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 18:37:17 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/15 09:52:46 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	set_ambient(t_data *data, char **params)
 	if (data->ambient.red != -1 || data->ambient.green != -1
 		|| data->ambient.blue != -1)
 		return (-1);
-	if (!params[0] || !params[1] || params[2])
+	if (array_len(params) != 2)
 		return (-1);
 	ratio = ft_atof(params[0]);
 	if (ratio < 0.0 || ratio > 1.0)
@@ -41,7 +41,7 @@ int	set_camera(t_data *data, char **params)
 
 	if (data->camera.fov != -1.0)
 		return (-1);
-	if (!params[0] || !params[1] || !params[2] || params[3])
+	if (array_len(params) != 3)
 		return (-1);
 	position = parse_vec(params[0]);
 	orientation = parse_vec(params[1]);
@@ -60,7 +60,7 @@ int	set_light(t_data *data, char **params)
 
 	if (data->light.intensity != -1.0)
 		return (-1);
-	if (!params[0] || !params[1] || !params[2] || params[3])
+	if (array_len(params) != 3)
 		return (-1);
 	position = parse_vec(params[0]);
 	intensity = ft_atof(params[1]);

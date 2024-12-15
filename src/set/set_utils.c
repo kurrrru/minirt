@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:56:23 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 18:51:43 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/14 22:10:20 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/set.h"
-
-static int	array_len(char **array);
 
 t_vec	parse_vec(char *str)
 {
@@ -50,7 +48,7 @@ t_color	parse_color(char *str)
 	return (color);
 }
 
-static int	array_len(char **array)
+int	array_len(char **array)
 {
 	int	len;
 
