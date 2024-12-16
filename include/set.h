@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 22:10:51 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/15 21:43:00 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "struct.h"
 # include "wrap.h"
 # include "util.h"
+# include "raytracing.h"
 
 int		read_file(t_data *data, char **argv);
 

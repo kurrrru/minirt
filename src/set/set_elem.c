@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_elem.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:49:35 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 09:52:46 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/15 22:47:48 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	set_ambient(t_data *data, char **params)
 		return (-1);
 	data->ambient = (t_color){color.red * ratio, color.green * ratio, color.blue
 		* ratio};
+	printf("finished A\n");
 	return (0);
 }
 
@@ -49,6 +50,7 @@ int	set_camera(t_data *data, char **params)
 	if (fov < 0 || fov > 180)
 		return (-1);
 	data->camera = (t_camera){position, orientation, fov};
+	printf("finished C\n");
 	return (0);
 }
 
@@ -69,5 +71,6 @@ int	set_light(t_data *data, char **params)
 		|| color.green < 0 || color.blue < 0)
 		return (-1);
 	data->light = (t_light){position, color, intensity};
+	printf("finished L\n");
 	return (0);
 }

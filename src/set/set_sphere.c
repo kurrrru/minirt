@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_sphere.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:54:02 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 22:11:41 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/15 22:48:00 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	set_sphere(t_data *data, char **params)
 	sphere = xmalloc(sizeof(t_object));
 	*sphere = (t_object){SPHERE, position, {0, 0, 0}, diameter / 2, 0, color};
 	ft_lstadd_back(&(data->objects), xlstnew(sphere));
+	printf("finished sp\n");
 	return (0);
 }
