@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:53:49 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 22:48:11 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 01:09:29 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,25 @@ static int	validate_cylinder_color(t_color *color, char **params);
 static int	parse_cylinder_values(t_vec *position, t_vec *orientation,
 				double *values, char **params);
 
-int set_cylinder(t_data *data, char **params)
+int	set_cylinder(t_data *data, char **params)
 {
-    t_vec       position;
-    t_vec       orientation;
-    t_color     color;
-    t_object    *cylinder;
-    double      values[2];
+	t_vec		position;
+	t_vec		orientation;
+	t_color		color;
+	t_object	*cylinder;
+	double		values[2];
 
-    if (array_len(params) != 5)
-        return (-1);
-    if (parse_cylinder_values(&position, &orientation, values, params) == -1
-        || validate_cylinder_color(&color, params) == -1)
-        return (-1);
-    orientation = normalize(orientation);
-    cylinder = xmalloc(sizeof(t_object));
-    *cylinder = (t_object){CYLINDER, position, orientation, values[0] / 2,
-        values[1], color};
-    ft_lstadd_back(&(data->objects), xlstnew(cylinder));
-    return (0);
+	if (array_len(params) != 5)
+		return (-1);
+	if (parse_cylinder_values(&position, &orientation, values, params) == -1
+		|| validate_cylinder_color(&color, params) == -1)
+		return (-1);
+	cylinder = xmalloc(sizeof(t_object));
+	*cylinder = (t_object){CYLINDER, position, orientation, values[0] / 2,
+		values[1], color};
+	ft_lstadd_back(&(data->objects), xlstnew(cylinder));
+	return (0);
 }
-
 
 static int	parse_cylinder_values(t_vec *position, t_vec *orientation,
 		double *values, char **params)
