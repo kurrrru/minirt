@@ -32,6 +32,7 @@ MLX			=	$(MLX_DIR)/$(MLX_NAME)
 
 # Compilation flags
 DEBUG		=	-fsanitize=address
+OPTFLAG		=	-O3 -flto
 CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%%
 
 # Remove command
@@ -40,6 +41,11 @@ RM			=	rm -f
 ifeq ($(filter debug,$(MAKECMDGOALS)),debug)
 	CFLAGS	+=	$(DEBUG)
 	LFLAGS	+=	$(DEBUG)
+endif
+
+ifeq ($(filter fast,$(MAKECMDGOALS)),fast)
+	CFLAGS	+=	$(OPTFLAG)
+	LFLAGS	+=	$(OPTFLAG)
 endif
 
 # Compilation rules
@@ -72,4 +78,6 @@ all: $(NAME)
 
 debug: $(NAME)
 
-.PHONY: all clean fclean re debug
+fast: $(NAME)
+
+.PHONY: all clean fclean re debug fast
