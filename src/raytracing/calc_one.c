@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   calc_one.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 18:29:09 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/15 20:53:52 by marimiyahar      ###   ########.fr       */
+/*   Created: 2024/12/15 20:55:49 by marimiyahar       #+#    #+#             */
+/*   Updated: 2024/12/17 01:03:00 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "../include/raytracing.h"
 
-# include "include.h"
-# include "loop.h"
-# include "macro.h"
-# include "struct.h"
-# include "util.h"
-# include "set.h"
-# include "wrap.h"
-# include "raytracing.h"
+t_vec	subtract(t_vec v1, t_vec v2)
+{
+	return ((t_vec){v1.x - v2.x, v1.y - v2.y, v1.z - v2.z});
+}
 
-#endif
+t_vec	add(t_vec v1, t_vec v2)
+{
+	return ((t_vec){v1.x + v2.x, v1.y + v2.y, v1.z + v2.z});
+}
+
+t_vec	scale(t_vec v, double scalar)
+{
+	return ((t_vec){v.x * scalar, v.y * scalar, v.z * scalar});
+}

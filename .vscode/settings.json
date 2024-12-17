@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"minirt.h": "c",
+		"wrap.h": "c",
+		"raytracing.h": "c",
+		"ios": "c"
+	}
+}

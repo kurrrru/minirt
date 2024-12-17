@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:16:13 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/14 14:10:29 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 01:00:34 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,10 @@ void	init_data(t_data *data)
 	data->camera.fov = -1.0;
 	data->light.intensity = -1.0;
 	data->objects = NULL;
+	data->img.width = 1000;
+	data->img.height = 1000;
+	data->img.image = NULL;
+	data->img.address = NULL;
+	data->img.bpp = 0;
+	data->img.endian = 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_elem.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:49:35 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 09:52:46 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:22 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	set_camera(t_data *data, char **params)
 		return (-1);
 	position = parse_vec(params[0]);
 	orientation = parse_vec(params[1]);
+	if (!check_normalized(orientation))
+		return (-1);
 	fov = ft_atof(params[2]);
 	if (fov < 0 || fov > 180)
 		return (-1);
@@ -70,4 +72,15 @@ int	set_light(t_data *data, char **params)
 		return (-1);
 	data->light = (t_light){position, color, intensity};
 	return (0);
+}
+
+bool	check_normalized(t_vec v)
+{
+	double	magnitude;
+
+	magnitude = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+	if (magnitude != 1)
+		return (false);
+	else
+		return (true);
 }

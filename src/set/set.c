@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:24:56 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 10:16:22 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:12 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	read_file(t_data *data, char **argv)
 	{
 		if (next_line[ft_strlen(next_line) - 1] == '\n')
 			next_line[ft_strlen(next_line) - 1] = '\0';
-		handle_elements(data, next_line, fd);
+		if (ft_strlen(next_line) > 0)
+			handle_elements(data, next_line, fd);
 		free(next_line);
 		next_line = get_next_line(fd);
 	}

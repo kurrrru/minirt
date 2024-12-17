@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_cylinder.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:53:49 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 10:14:27 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:25 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static int	parse_cylinder_values(t_vec *position, t_vec *orientation,
 {
 	*position = parse_vec(params[0]);
 	*orientation = parse_vec(params[1]);
+	if (!check_normalized(*orientation))
+		return (-1);
 	values[0] = ft_atof(params[2]);
 	values[1] = ft_atof(params[3]);
 	if (values[0] <= 0 || values[1] <= 0)

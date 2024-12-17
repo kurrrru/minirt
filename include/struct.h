@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:29:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/14 00:00:26 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 01:03:27 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_image
 	int				endian;
 	int				width;
 	int				height;
+	int				line_size;
 }					t_image;
 
 typedef enum e_shape
@@ -47,7 +48,7 @@ typedef struct s_color
 	double			blue;
 }					t_color;
 
-typedef struct s_obejct
+typedef struct s_object
 {
 	enum e_shape	shape;
 	t_vec			center;
@@ -81,5 +82,21 @@ typedef struct s_data
 	t_color			ambient;
 	t_light			light;
 }					t_data;
+
+typedef struct s_closest_obj
+{
+	t_object		*closest_obj;
+	double			min_dist;
+	t_color			final_color;
+	t_vec			intersection_point;
+	t_vec			normal;
+}					t_closest_obj;
+
+typedef struct s_basis
+{
+	t_vec			forward;
+	t_vec			right;
+	t_vec			up;
+}					t_basis;
 
 #endif
