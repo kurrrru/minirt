@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 01:02:27 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 01:02:44 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:38 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ t_vec	normalize(t_vec v)
 	double	magnitude;
 
 	magnitude = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+	if (magnitude == 0)
+		return ((t_vec){0, 0, 0});
 	return ((t_vec){v.x / magnitude, v.y / magnitude, v.z / magnitude});
 }

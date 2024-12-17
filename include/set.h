@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 21:43:00 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:44 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include "include.h"
 # include "macro.h"
-# include "struct.h"
-# include "wrap.h"
-# include "util.h"
 # include "raytracing.h"
+# include "struct.h"
+# include "util.h"
+# include "wrap.h"
 
 int		read_file(t_data *data, char **argv);
 
@@ -36,5 +36,7 @@ int		set_light(t_data *data, char **params);
 int		set_cylinder(t_data *data, char **params);
 int		set_plane(t_data *data, char **params);
 int		set_sphere(t_data *data, char **params);
+
+bool	check_normalized(t_vec v);
 
 #endif

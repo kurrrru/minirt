@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:49:35 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 22:47:48 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:22 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	set_ambient(t_data *data, char **params)
 		return (-1);
 	data->ambient = (t_color){color.red * ratio, color.green * ratio, color.blue
 		* ratio};
-	printf("finished A\n");
 	return (0);
 }
 
@@ -46,11 +45,12 @@ int	set_camera(t_data *data, char **params)
 		return (-1);
 	position = parse_vec(params[0]);
 	orientation = parse_vec(params[1]);
+	if (!check_normalized(orientation))
+		return (-1);
 	fov = ft_atof(params[2]);
 	if (fov < 0 || fov > 180)
 		return (-1);
 	data->camera = (t_camera){position, orientation, fov};
-	printf("finished C\n");
 	return (0);
 }
 
@@ -71,6 +71,16 @@ int	set_light(t_data *data, char **params)
 		|| color.green < 0 || color.blue < 0)
 		return (-1);
 	data->light = (t_light){position, color, intensity};
-	printf("finished L\n");
 	return (0);
+}
+
+bool	check_normalized(t_vec v)
+{
+	double	magnitude;
+
+	magnitude = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+	if (magnitude != 1)
+		return (false);
+	else
+		return (true);
 }

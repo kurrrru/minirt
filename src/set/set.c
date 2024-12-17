@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:24:56 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 01:00:20 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/17 17:46:12 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ static int	handle_elements(t_data *data, char *next_line, int fd);
 
 int	read_file(t_data *data, char **argv)
 {
-	int			fd;
-	char		*next_line;
-	t_list		*current;
-	t_object	*obj;
+	int		fd;
+	char	*next_line;
 
 	fd = xopen(argv[1], O_RDONLY);
 	next_line = get_next_line(fd);
@@ -28,17 +26,12 @@ int	read_file(t_data *data, char **argv)
 	{
 		if (next_line[ft_strlen(next_line) - 1] == '\n')
 			next_line[ft_strlen(next_line) - 1] = '\0';
-		handle_elements(data, next_line, fd);
+		if (ft_strlen(next_line) > 0)
+			handle_elements(data, next_line, fd);
 		free(next_line);
 		next_line = get_next_line(fd);
 	}
 	xclose(fd);
-	current = data->objects;
-	while (current)
-	{
-		obj = (t_object *)current->content;
-		current = current->next;
-	}
 	return (0);
 }
 
