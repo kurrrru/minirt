@@ -6,7 +6,7 @@
 /*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 00:17:06 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:29 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/18 16:21:31 by marimiyahar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,18 @@ static bool	has_shadow(t_list *objects, t_vec hit_point, t_vec light_pos)
 	t_vec			shadow_dir;
 	double			light_dist;
 	t_closest_obj	find_shadow;
+	double			relative_epsilon;
+	double			relative_epsilon;
 
 	shadow_dir = subtract(light_pos, hit_point);
 	light_dist = sqrt(dot_product(shadow_dir, shadow_dir));
 	shadow_dir = normalize(shadow_dir);
-	find_shadow.min_dist = light_dist;
+	relative_epsilon = light_dist * 1e-3;
+	find_shadow.min_dist = light_dist - relative_epsilon;
 	find_shadow.closest_obj = NULL;
 	find_nearest_object(objects, hit_point, shadow_dir, &find_shadow);
-	if (find_shadow.closest_obj != NULL && find_shadow.min_dist < light_dist)
+	if (find_shadow.closest_obj != NULL && find_shadow.min_dist < light_dist
+		- relative_epsilon)
 		return (true);
 	return (false);
 }
