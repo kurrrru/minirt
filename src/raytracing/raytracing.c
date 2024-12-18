@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:17:27 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 00:58:52 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/18 20:26:53 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ static t_color	trace_ray(t_data *data, t_vec origin, t_vec direction)
 		find_obj.final_color = compute_lighting(data,
 				find_obj.intersection_point, find_obj.normal,
 				find_obj.closest_obj);
+	}
+	else
+	{
+		find_obj.final_color.red = data->ambient.red;
+		find_obj.final_color.green = data->ambient.green;
+		find_obj.final_color.blue = data->ambient.blue;
 	}
 	return (find_obj.final_color);
 }

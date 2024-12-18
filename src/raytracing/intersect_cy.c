@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersect_cy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 00:20:54 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:35 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/18 20:17:59 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,20 @@ static int	check_intersect(double *t, t_object *obj, t_vec origin,
 	t_vec	oc;
 	t_vec	d_proj;
 	t_vec	oc_proj;
+	double	x;
 
 	oc = subtract(origin, obj->center);
 	d_proj = subtract(direction, scale(obj->norm_vector, dot_product(direction,
 					obj->norm_vector)));
 	oc_proj = subtract(oc, scale(obj->norm_vector, dot_product(oc,
 					obj->norm_vector)));
-	return (calc_t(d_proj, oc_proj, t, obj));
+	if (calc_t(d_proj, oc_proj, t, obj) == 0)
+		return (0);
+	x = *t * dot_product(direction, obj->norm_vector) + dot_product(oc,
+			obj->norm_vector);
+	if (x < -obj->height / 2 || x > obj->height / 2)
+		return (0);
+	return (1);
 }
 
 static int	calc_t(t_vec d_proj, t_vec oc_proj, double *t, t_object *obj)
