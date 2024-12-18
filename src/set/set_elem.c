@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_elem.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:49:35 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:22 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/18 21:08:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ bool	check_normalized(t_vec v)
 	double	magnitude;
 
 	magnitude = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
-	if (magnitude != 1)
+	if (magnitude < 1 - 1e-6 || magnitude > 1 + 1e-6)
 		return (false);
 	else
 		return (true);
