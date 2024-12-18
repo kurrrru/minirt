@@ -10,7 +10,7 @@ else
 endif
 
 # Executable file
-NAME		=	minirt
+NAME		=	miniRT
 
 # Source files
 SRCS		=	src/main.c	$(wildcard src/*/*.c)
