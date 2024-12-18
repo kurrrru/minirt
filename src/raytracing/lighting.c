@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 00:17:06 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:29 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/18 19:15:12 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ static bool	has_shadow(t_list *objects, t_vec hit_point, t_vec light_pos)
 	find_shadow.min_dist = light_dist;
 	find_shadow.closest_obj = NULL;
 	find_nearest_object(objects, hit_point, shadow_dir, &find_shadow);
-	if (find_shadow.closest_obj != NULL && find_shadow.min_dist < light_dist)
+	if (find_shadow.closest_obj != NULL && find_shadow.min_dist < light_dist
+		- 1e-3)
 		return (true);
 	return (false);
 }
