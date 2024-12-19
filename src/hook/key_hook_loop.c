@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:48:45 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/19 19:26:58 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/19 21:36:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 int	key_hook_loop(int keycode, t_data *data)
 {
 	printf("keycode: %d\n", keycode);
-	key_hook_update(keycode, data);
-	prompt(data);
+	if (key_hook_update(keycode, data) == 1)
+		prompt(data);
 	return (0);
 }

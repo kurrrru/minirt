@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:30:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/19 13:19:21 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/19 22:27:10 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	data.img.address = xmlx_get_data_addr(data.img.image, &data.img.bpp,
 			&data.img.line_size, &data.img.endian);
 	raytracing(&data);
+	prompt(&data);
 	mlx_key_hook(data.win, key_press, &data);
 	mlx_hook(data.win, CLOSE_EVENT, 0, close_window, &data);
 	mlx_hook(data.win, KeyPress, KeyPressMask, key_hook_loop, &data);
