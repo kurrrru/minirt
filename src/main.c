@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:30:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:08 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/19 13:19:21 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int	main(int argc, char **argv)
 	init_data(&data);
 	read_file(&data, argv);
 	data.mlx = xmlx_init();
-	data.win = xmlx_new_window(data.mlx, 1000, 1000, "miniRT");
-	data.img.image = xmlx_new_image(data.mlx, 1000, 1000);
+	data.win = xmlx_new_window(data.mlx, 400, 400, "miniRT");
+	data.img.image = xmlx_new_image(data.mlx, 400, 400);
 	data.img.address = xmlx_get_data_addr(data.img.image, &data.img.bpp,
 			&data.img.line_size, &data.img.endian);
 	raytracing(&data);
 	mlx_key_hook(data.win, key_press, &data);
 	mlx_hook(data.win, CLOSE_EVENT, 0, close_window, &data);
+	mlx_hook(data.win, KeyPress, KeyPressMask, key_hook_loop, &data);
 	mlx_loop_hook(data.mlx, &main_loop, &data);
 	mlx_loop(data.mlx);
 	return (0);
