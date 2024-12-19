@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 19:32:01 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/19 21:36:49 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/19 22:44:40 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,20 +192,26 @@ static int	key_hook_update_object_rotate(int keycode, t_data *data)
 	if (keycode == M_RESIZE_UP)
 	{
 		if (data->hook.axis == HOOK_AXIS_X)
-			hook_lst_at(data, data->hook.idx_selected)->norm_vector = rotate_x(hook_lst_at(data, data->hook.idx_selected)->norm_vector, 5);
+			(hook_lst_at(data, data->hook.idx_selected))->norm_vector
+				= rotate_x(hook_lst_at(data, data->hook.idx_selected)->norm_vector, 5);
 		else if (data->hook.axis == HOOK_AXIS_Y)
-			hook_lst_at(data, data->hook.idx_selected)->norm_vector = rotate_y(hook_lst_at(data, data->hook.idx_selected)->norm_vector, 5);
+			(hook_lst_at(data, data->hook.idx_selected))->norm_vector
+				= rotate_y(hook_lst_at(data, data->hook.idx_selected)->norm_vector, 5);
 		else if (data->hook.axis == HOOK_AXIS_Z)
-			hook_lst_at(data, data->hook.idx_selected)->norm_vector = rotate_z(hook_lst_at(data, data->hook.idx_selected)->norm_vector, 5);
+			(hook_lst_at(data, data->hook.idx_selected))->norm_vector
+				= rotate_z(hook_lst_at(data, data->hook.idx_selected)->norm_vector, 5);
 	}
 	else if (keycode == M_RESIZE_DOWN)
 	{
 		if (data->hook.axis == HOOK_AXIS_X)
-			hook_lst_at(data, data->hook.idx_selected)->norm_vector = rotate_x(hook_lst_at(data, data->hook.idx_selected)->norm_vector, -5);
+			(hook_lst_at(data, data->hook.idx_selected))->norm_vector
+				= rotate_x(hook_lst_at(data, data->hook.idx_selected)->norm_vector, -5);
 		else if (data->hook.axis == HOOK_AXIS_Y)
-			hook_lst_at(data, data->hook.idx_selected)->norm_vector = rotate_y(hook_lst_at(data, data->hook.idx_selected)->norm_vector, -5);
+			(hook_lst_at(data, data->hook.idx_selected))->norm_vector
+				= rotate_y(hook_lst_at(data, data->hook.idx_selected)->norm_vector, -5);
 		else if (data->hook.axis == HOOK_AXIS_Z)
-			hook_lst_at(data, data->hook.idx_selected)->norm_vector = rotate_z(hook_lst_at(data, data->hook.idx_selected)->norm_vector, -5);
+			(hook_lst_at(data, data->hook.idx_selected))->norm_vector
+				= rotate_z(hook_lst_at(data, data->hook.idx_selected)->norm_vector, -5);
 	}
 	else
 		return (0);
