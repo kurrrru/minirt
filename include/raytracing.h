@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/20 13:30:43 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:26:56 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ int			intersect_cylinder(t_vec origin, t_vec direction,
 				t_closest_obj *find_obj);
 int			intersect_plane(t_vec origin, t_vec direction,
 				t_closest_obj *find_obj);
+
+double		intersect_cy_top_base(t_vec direction, t_vec oc, t_object *obj);
+double		intersect_cy_bottom_base(t_vec direction, t_vec oc, t_object *obj);
 
 t_vec		subtract(t_vec v1, t_vec v2);
 t_vec		add(t_vec v1, t_vec v2);
