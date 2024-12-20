@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/19 21:20:39 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:30:43 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int			intersect_sphere(t_vec origin, t_vec direction,
 				t_closest_obj *find_obj);
 int			intersect_cylinder(t_vec origin, t_vec direction,
 				t_closest_obj *find_obj);
-int			intersect_plane(t_vec origin, t_vec direction, t_closest_obj *find_obj);
+int			intersect_plane(t_vec origin, t_vec direction,
+				t_closest_obj *find_obj);
 
 t_vec		subtract(t_vec v1, t_vec v2);
 t_vec		add(t_vec v1, t_vec v2);
@@ -51,8 +52,15 @@ void		prompt_camera(t_data *data);
 
 int			key_hook_update(int keycode, t_data *data);
 int			key_hook_update_object(int keycode, t_data *data);
+int			key_hook_update_object_resize(int keycode, t_data *data);
+int			key_hook_update_object_move(int keycode, t_data *data);
+int			key_hook_update_object_rotate(int keycode, t_data *data);
 int			key_hook_update_camera(int keycode, t_data *data);
+int			key_hook_update_camera_move(int keycode, t_data *data);
+int			key_hook_update_camera_rotate(int keycode, t_data *data);
 int			key_hook_update_light(int keycode, t_data *data);
+int			key_hook_update_light_move(int keycode, t_data *data);
+int			key_hook_update_light_rotate(int keycode, t_data *data);
 
 t_object	*hook_lst_at(t_data *data, int idx);
 t_vec		rotate_x(t_vec vec, double angle);

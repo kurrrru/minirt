@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:42:57 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/19 20:10:30 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:48:13 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ static void	prompt_object_display(t_data *data)
 {
 	t_object	*object;
 
-	printf("now selected object: \n");
+	printf("=== now selected object ===\n");
 	object = hook_lst_at(data, data->hook.idx_displayed);
 	if (object)
 	{
+		printf(" id: %d\n", data->hook.idx_displayed);
 		if (object->shape == SPHERE)
 			printf(" type: Sphere\n");
 		else if (object->shape == CYLINDER)
@@ -68,6 +69,7 @@ static void	prompt_object_display(t_data *data)
 			printf(" height: %f\n", object->height);
 		}
 	}
+	printf("===========================\n");
 }
 
 static void	prompt_object_resize(t_data *data)

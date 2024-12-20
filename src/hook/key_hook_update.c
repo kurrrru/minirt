@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 19:27:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/19 21:21:49 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 11:53:26 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ static int	key_hook_update_element(int keycode, t_data *data)
 		return (0);
 	return (1);
 }
-
