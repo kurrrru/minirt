@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersect_sp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 00:20:57 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:33 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/20 19:33:45 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	intersect_sphere(t_vec origin, t_vec direction, t_closest_obj *find_obj)
 
 	if (check_intersect(&t, origin, direction, find_obj->closest_obj) == 0)
 		return (0);
-	if (t > 1e-6 && t < find_obj->min_dist)
+	if (t > 0 && t < find_obj->min_dist)
 		find_obj->min_dist = t;
 	else
 		return (0);
