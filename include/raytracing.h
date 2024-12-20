@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 21:26:05 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/20 18:26:56 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 22:22:50 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int			key_hook_update_camera_move(int keycode, t_data *data);
 int			key_hook_update_camera_rotate(int keycode, t_data *data);
 int			key_hook_update_light(int keycode, t_data *data);
 int			key_hook_update_light_move(int keycode, t_data *data);
-int			key_hook_update_light_rotate(int keycode, t_data *data);
 
 t_object	*hook_lst_at(t_data *data, int idx);
 t_vec		rotate_x(t_vec vec, double angle);

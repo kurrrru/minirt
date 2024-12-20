@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 19:32:01 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 17:53:55 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 22:48:42 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ int	key_hook_update_object(int keycode, t_data *data)
 
 static int	key_hook_update_object_op(int keycode, t_data *data)
 {
-	if (keycode == M_OBJ_RESIZE)
+	if (keycode == M_OBJ_RESIZE
+		&& hook_lst_at(data, data->hook.idx_selected)->shape != PLANE)
 		data->hook.obj = HOOK_OBJ_RESIZE;
 	else if (keycode == M_OBJ_MOVE)
 		data->hook.obj = HOOK_OBJ_MOVE;
-	else if (keycode == M_OBJ_ROTATE)
+	else if (keycode == M_OBJ_ROTATE
+		&& hook_lst_at(data, data->hook.idx_selected)->shape != SPHERE)
 		data->hook.obj = HOOK_OBJ_ROTATE;
 	else if (keycode == M_BACK)
 		data->hook.idx_selected = -1;
@@ -78,8 +80,6 @@ static int	key_hook_update_object_select(int keycode, t_data *data)
 static int	key_hook_update_object_select_end(int keycode, t_data *data)
 {
 	(void)keycode;
-	if (hook_lst_at(data, data->hook.idx_displayed)->shape == PLANE)
-		return (printf("\033[31mthis object cannot be selected\033[0m\n"), 0);
 	data->hook.idx_selected = data->hook.idx_displayed;
 	data->hook.idx_displayed = 0;
 	return (1);
