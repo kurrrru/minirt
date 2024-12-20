@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:31:51 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 17:15:36 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:53:40 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static int	key_hook_update_camera_rotate_axis(int keycode, t_data *data)
 
 static int	key_hook_update_camera_rotate_up(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (data->hook.axis == HOOK_AXIS_X)
 		data->camera.position = rotate_x(data->camera.position, 1);
 	else if (data->hook.axis == HOOK_AXIS_Y)
@@ -64,6 +65,7 @@ static int	key_hook_update_camera_rotate_up(int keycode, t_data *data)
 
 static int	key_hook_update_camera_rotate_down(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (data->hook.axis == HOOK_AXIS_X)
 		data->camera.position = rotate_x(data->camera.position, -1);
 	else if (data->hook.axis == HOOK_AXIS_Y)

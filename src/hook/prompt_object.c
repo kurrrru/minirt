@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 18:42:57 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 13:48:13 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 18:05:19 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,15 @@ static void	prompt_object_display(t_data *data)
 
 	printf("=== now selected object ===\n");
 	object = hook_lst_at(data, data->hook.idx_displayed);
-	if (object)
+	printf(" id: %d\n", data->hook.idx_displayed);
+	if (object->shape == PLANE)
+		printf(" type: Plane\n");
+	else
 	{
-		printf(" id: %d\n", data->hook.idx_displayed);
 		if (object->shape == SPHERE)
 			printf(" type: Sphere\n");
 		else if (object->shape == CYLINDER)
 			printf(" type: Cylinder\n");
-		else if (object->shape == PLANE)
-			return ((void)printf(" type: Plane\n"));
 		printf(" center: (%f, %f, %f)\n",
 			object->center.x, object->center.y, object->center.z);
 		if (object->shape == SPHERE)
@@ -77,9 +77,9 @@ static void	prompt_object_resize(t_data *data)
 	if (data->hook.resize == HOOK_RESIZE_NONE)
 	{
 		printf("choose the property to resize:\n");
-		if (((t_object *)data->objects->content)->shape == SPHERE)
+		if (hook_lst_at(data, data->hook.idx_selected)->shape == SPHERE)
 			printf("  - D: Diameter\n");
-		else if (((t_object *)data->objects->content)->shape == CYLINDER)
+		else if (hook_lst_at(data, data->hook.idx_selected)->shape == CYLINDER)
 		{
 			printf("  - W: Width\n");
 			printf("  - H: Height\n");

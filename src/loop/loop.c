@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:16:13 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/19 18:09:59 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:54:44 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	init_data(t_data *data)
 	data->camera.fov = -1.0;
 	data->light.intensity = -1.0;
 	data->objects = NULL;
-	data->img.width = 400;
-	data->img.height = 400;
+	data->img.width = 1000;
+	data->img.height = 1000;
 	data->img.image = NULL;
 	data->img.address = NULL;
 	data->img.bpp = 0;

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 19:32:01 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 17:41:05 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:53:55 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ static int	key_hook_update_object_select(int keycode, t_data *data)
 
 static int	key_hook_update_object_select_end(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (hook_lst_at(data, data->hook.idx_displayed)->shape == PLANE)
 		return (printf("\033[31mthis object cannot be selected\033[0m\n"), 0);
 	data->hook.idx_selected = data->hook.idx_displayed;

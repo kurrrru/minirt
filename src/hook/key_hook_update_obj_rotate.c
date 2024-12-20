@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:32:57 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 17:47:40 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:53:08 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static int	key_hook_update_object_rotate_axis(int keycode, t_data *data)
 
 static int	key_hook_update_object_rotate_up(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (data->hook.axis == HOOK_AXIS_X)
 		(hook_lst_at(data, data->hook.idx_selected))->norm_vector
 			= rotate_x(hook_lst_at(data, data->hook.idx_selected)
@@ -68,6 +69,7 @@ static int	key_hook_update_object_rotate_up(int keycode, t_data *data)
 
 static int	key_hook_update_object_rotate_down(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (data->hook.axis == HOOK_AXIS_X)
 		(hook_lst_at(data, data->hook.idx_selected))->norm_vector
 			= rotate_x(hook_lst_at(data, data->hook.idx_selected)

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:29:44 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 17:24:22 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:52:27 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static int	key_hook_update_light_rotate_axis(int keycode, t_data *data)
 
 static int	key_hook_update_light_rotate_up(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (data->hook.axis == HOOK_AXIS_X)
 		data->light.position = rotate_x(data->light.position, 5);
 	else if (data->hook.axis == HOOK_AXIS_Y)
@@ -64,6 +65,7 @@ static int	key_hook_update_light_rotate_up(int keycode, t_data *data)
 
 static int	key_hook_update_light_rotate_down(int keycode, t_data *data)
 {
+	(void)keycode;
 	if (data->hook.axis == HOOK_AXIS_X)
 		data->light.position = rotate_x(data->light.position, -5);
 	else if (data->hook.axis == HOOK_AXIS_Y)
