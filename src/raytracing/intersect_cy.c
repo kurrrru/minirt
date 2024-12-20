@@ -6,22 +6,22 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 00:20:54 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/20 11:17:50 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/21 01:57:41 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/raytracing.h"
 
-static int	check_intersect(double *t, t_object *obj, t_vec origin,
-				t_vec direction);
-static int	calc_t(t_vec d_proj, t_vec oc_proj, double *t, t_object *obj);
-static int	calc_t_again(t_vec direction, t_vec oc,
-				double *t, t_object *obj);
+static int		check_intersect(double *t, t_object *obj, t_vec origin,
+					t_vec direction);
+static int		calc_t(t_vec d_proj, t_vec oc_proj, double *t, t_object *obj);
+static int		calc_t_again(t_vec direction, t_vec oc,
+					double *t, t_object *obj);
+static t_vec	calc_norm(t_closest_obj *find_obj);
 
 int	intersect_cylinder(t_vec origin, t_vec direction, t_closest_obj *find_obj)
 {
 	double	t;
-	t_vec	temp_normal;
 
 	if (check_intersect(&t, find_obj->closest_obj, origin, direction) == 0)
 		return (0);
@@ -31,13 +31,30 @@ int	intersect_cylinder(t_vec origin, t_vec direction, t_closest_obj *find_obj)
 		return (0);
 	find_obj->intersection_point = add(origin, scale(direction,
 				find_obj->min_dist));
-	temp_normal = subtract(find_obj->intersection_point,
-			find_obj->closest_obj->center);
-	find_obj->normal = normalize(subtract(temp_normal,
-				scale(find_obj->closest_obj->norm_vector,
-					dot_product(temp_normal,
-						find_obj->closest_obj->norm_vector))));
+	find_obj->normal = calc_norm(find_obj);
 	return (1);
+}
+
+static t_vec	calc_norm(t_closest_obj *find_obj)
+{
+	t_vec	temp_norm;
+	double	dot1;
+	double	dot2;
+
+	temp_norm = subtract(find_obj->intersection_point,
+			find_obj->closest_obj->center);
+	dot1 = dot_product(temp_norm, find_obj->closest_obj->norm_vector)
+		/ (find_obj->closest_obj->height / 2);
+	dot2 = dot_product(find_obj->closest_obj->norm_vector,
+			find_obj->closest_obj->norm_vector);
+	if (-1e-6 < dot2 - dot1 && dot2 - dot1 < 1e-6)
+		return (find_obj->closest_obj->norm_vector);
+	else if (-1e-6 < dot2 + dot1 && dot2 + dot1 < 1e-6)
+		return (scale(find_obj->closest_obj->norm_vector, -1));
+	else
+		return (normalize(subtract(temp_norm, scale(find_obj
+						->closest_obj->norm_vector, dot_product(temp_norm,
+							find_obj->closest_obj->norm_vector)))));
 }
 
 static int	check_intersect(double *t, t_object *obj, t_vec origin,
