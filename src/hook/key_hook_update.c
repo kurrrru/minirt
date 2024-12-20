@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 19:27:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 11:53:26 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/20 23:53:43 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	key_hook_update(int keycode, t_data *data)
 
 static int	key_hook_update_element(int keycode, t_data *data)
 {
-	if (keycode == M_ELEM_OBJ)
+	if (keycode == M_ELEM_OBJ && data->objects)
 		data->hook.elem = HOOK_ELEM_OBJECT;
 	else if (keycode == M_ELEM_LIGHT)
 		data->hook.elem = HOOK_ELEM_LIGHT;
