@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:03:42 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/20 11:51:26 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/21 13:48:07 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "keymacro.h"
 
-# define ESC_KEY 65307
 # define CLOSE_EVENT 17
 # define SCREEN_WID 800
 # define SCREEN_HEI 600

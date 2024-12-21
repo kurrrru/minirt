@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:19:19 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/21 13:44:22 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/21 13:48:24 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@
 #  define KEY_ARROW_LEFT  123
 #  define KEY_ARROW_RIGHT 124
 
+#  define ESC_KEY 53
+
 # else
 
 #  define KEY_0 48
@@ -102,6 +104,8 @@
 #  define KEY_ARROW_DOWN 65364
 #  define KEY_ARROW_LEFT 65361
 #  define KEY_ARROW_RIGHT 65363
+
+#  define ESC_KEY 65307
 
 # endif
 
