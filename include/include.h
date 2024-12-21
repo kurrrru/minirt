@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 20:25:20 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/15 20:54:57 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/21 13:39:11 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
