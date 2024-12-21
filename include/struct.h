@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:29:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/17 01:03:27 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/19 19:23:34 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,72 @@ typedef enum e_shape
 	SPHERE,
 	CYLINDER
 }					t_shape;
+
+typedef enum e_hook_elem
+{
+	HOOK_ELEM_NONE,
+	HOOK_ELEM_OBJECT,
+	HOOK_ELEM_LIGHT,
+	HOOK_ELEM_CAMERA
+}					t_hook_elem;
+
+typedef enum e_hook_obj
+{
+	HOOK_OBJ_NONE,
+	HOOK_OBJ_RESIZE,
+	HOOK_OBJ_MOVE,
+	HOOK_OBJ_ROTATE
+}					t_hook_obj;
+
+typedef enum e_hook_resize
+{
+	HOOK_RESIZE_NONE,
+	HOOK_RESIZE_DIAMETER,
+	HOOK_RESIZE_WIDTH,
+	HOOK_RESIZE_HEIGHT
+}					t_hook_resize;
+
+typedef enum e_hook_light
+{
+	HOOK_LIGHT_NONE,
+	HOOK_LIGHT_MOVE,
+	HOOK_LIGHT_ROTATE
+}					t_hook_light;
+
+typedef enum e_hook_camera
+{
+	HOOK_CAMERA_NONE,
+	HOOK_CAMERA_MOVE,
+	HOOK_CAMERA_ROTATE
+}					t_hook_camera;
+
+typedef enum e_hook_axis
+{
+	HOOK_AXIS_NONE,
+	HOOK_AXIS_X,
+	HOOK_AXIS_Y,
+	HOOK_AXIS_Z
+}					t_hook_axis;
+
+typedef enum e_hook_diff
+{
+	HOOK_DIFF_NONE,
+	HOOK_DIFF_UP,
+	HOOK_DIFF_DOWN,
+}					t_hook_diff;
+
+typedef struct s_hook
+{
+	t_hook_elem		elem;
+	int				idx_displayed;
+	int				idx_selected;
+	t_hook_obj		obj;
+	t_hook_light	light;
+	t_hook_camera	camera;
+	t_hook_resize	resize;
+	t_hook_axis		axis;
+	t_hook_diff		rotate;
+}				t_hook;
 
 typedef struct s_color
 {
@@ -81,6 +147,7 @@ typedef struct s_data
 	t_list			*objects;
 	t_color			ambient;
 	t_light			light;
+	t_hook			hook;
 }					t_data;
 
 typedef struct s_closest_obj

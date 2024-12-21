@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   loop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:16:13 by marimiyahar       #+#    #+#             */
-/*   Updated: 2024/12/17 01:00:34 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/20 17:54:44 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/loop.h"
+#include "../include/minirt.h"
 
 int	close_window(void *param)
 {
@@ -31,6 +31,7 @@ int	key_press(int keycode, t_data *data)
 
 int	main_loop(t_data *data)
 {
+	raytracing(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img.image, 0, 0);
 	return (0);
 }
@@ -47,4 +48,5 @@ void	init_data(t_data *data)
 	data->img.address = NULL;
 	data->img.bpp = 0;
 	data->img.endian = 0;
+	hook_init(&data->hook);
 }

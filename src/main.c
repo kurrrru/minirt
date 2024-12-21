@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marimiyahara <marimiyahara@student.42.f    +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 18:30:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/12/17 17:46:08 by marimiyahar      ###   ########.fr       */
+/*   Updated: 2024/12/20 17:54:44 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int	main(int argc, char **argv)
 	data.img.address = xmlx_get_data_addr(data.img.image, &data.img.bpp,
 			&data.img.line_size, &data.img.endian);
 	raytracing(&data);
+	prompt(&data);
 	mlx_key_hook(data.win, key_press, &data);
 	mlx_hook(data.win, CLOSE_EVENT, 0, close_window, &data);
+	mlx_hook(data.win, KeyPress, KeyPressMask, key_hook_loop, &data);
 	mlx_loop_hook(data.mlx, &main_loop, &data);
 	mlx_loop(data.mlx);
 	return (0);
